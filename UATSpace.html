@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<!--Final!
+    writtten by: Brandon Ackerman
+    CSC102, 12 June 2021-->
+<!--
+
+   ,___                     ______               
+  /   /        o           (  /     _/_          
+ /    __,  (  ,  _ _   __   -/--, , /  , , _   __
+(___/(_/(_/_)_(_/ / /_(_)  _/  (_/_(__(_/_/ (_(_)
+
+*************************************************************************************************************************                                                
+It's the year 2055. Inter-planetary travel has been restricted due to the uprising of the Cerulean Faction in the Nexus Galaxy.
+Weary travellers search in earnest for a place to let off steam. The place of choice: Casino Futuro! Located in the outer
+rings of the Jupiter Space Complex, Casino Futuro is host to highest class players of the galaxy's favorite game - Craps!
+*************************************************************************************************************************
+-->
+
+<html lang="en">
+
+<head>
+
+    <title>
+        UAT Space Program
+    </title>
+
+
+    <link rel="stylesheet" href="Style/style.css">
+    <script src="Script/code.js"></script>
+    <script src="Script/ldPgScripts.js"></script>
+    <script src="Script/dataLoader-1.js"></script>
+
+    <head>
+
+    <body>
+
+        <!--needed for DOM-->
+        <script>
+            //creates needed values
+            var theTime = new Date(); //variable for date/time/seconds.
+            var tempTime = new Date(); //create variable for tempTime.
+            var time_interval = 5000; //sets the time interval to 5 seconds.
+            var last_iteration = 0; //create variable for last iteration and set = 0.
+            var running = true; //boolean variable to tell us code is running. 
+            var index = 0; //start counting point for index.
+            var timer; //create variable for timer.
+
+            //to getData for the table
+            var data = getData();
+
+            //data from dataloader() to our table
+            function updateDisplay() {
+                theTime = new Date();
+
+                //fill in table
+                var timeRead = data[index].time_seconds;
+                console.log("made it here"); //was running into multiple bugs, finally sorted them all out!
+                if (timeRead >= 10) {
+                    //Grabs the information and writes it to the the table rows
+                    document.getElementById("data").rows["seconds"].innerHTML = dataRow("Time Elapsed", data[index].time_seconds, "seconds");
+                    document.getElementById("data").rows["latitude"].innerHTML = dataRow("Latitude", data[index].latitude, " ");
+                    document.getElementById("data").rows["longitude"].innerHTML = dataRow("Longitude", data[index].longitude, " ");
+                    document.getElementById("data").rows["gps_elevation"].innerHTML = dataRow("GPS Elevation", data[index].gps_elevation, " ");
+                    document.getElementById("data").rows["bmpSensor_altitude"].innerHTML = dataRow("BMP Sensor Altitude", data[index].bmpSensor_altitude, " ");
+                    document.getElementById("data").rows["bmpSensor_pressure"].innerHTML = dataRow("BMP Sensor Pressure", data[index].bmpSensor_pressure), " ";
+                    document.getElementById("data").rows["bmpSensor_altitude"].innerHTML = dataRow("BMP Sensor Altitude", data[index].bmpSensor_altitude, " ");
+                    document.getElementById("data").rows["bmpSensor_pressure"].innerHTML = dataRow("BMP Sensor Pressure", data[index].bmpSensor_pressure, " ");
+                    document.getElementById("data").rows["bmpSensor_temp"].innerHTML = dataRow("BMP Sensor Temperature", data[index].bmpSensor_temp, " ");
+                    document.getElementById("data").rows["digSensor_temp"].innerHTML = dataRow("Digital Sensor Altitude", data[index].digSensor_temp, " ");
+                    document.getElementById("data").rows["cssSensor_temp"].innerHTML = dataRow("CSS Sensor Temperature", data[index].cssSensor_temp, " ");
+                    document.getElementById("data").rows["cssSensor_eC02"].innerHTML = dataRow("CSS Sensor eC02", data[index].cssSensor_eC02, " ");
+                    document.getElementById("data").rows["cssSensor_TVOC"].innerHTML = dataRow("CSS Sensor TVOC", data[index].cssSensor_TVOC, " ");
+                    document.getElementById("data").rows["UV"].innerHTML = dataRow("UV", data[index].UV, " ");
+                    document.getElementById("data").rows["accelX"].innerHTML = dataRow("AccelX", data[index].accelX, " ");
+                    document.getElementById("data").rows["accelY"].innerHTML = dataRow("AccelY", data[index].accelY, " ");
+                    document.getElementById("data").rows["accelZ"].innerHTML = dataRow("AccelZ", data[index].accelZ, " ");
+                    document.getElementById("data").rows["magneticX"].innerHTML = dataRow("magneticX", data[index].magneticX, " ");
+                    document.getElementById("data").rows["magneticY"].innerHTML = dataRow("magneticY", data[index].magneticY, " ");
+                    document.getElementById("data").rows["magneticZ"].innerHTML = dataRow("magneticZ", data[index].magneticZ, " ");
+                    document.getElementById("data").rows["gyroX"].innerHTML = dataRow("gyroX", data[index].gyroX, " ");
+                    document.getElementById("data").rows["gyroY"].innerHTML = dataRow("gyroY", data[index].gyroY, " ");
+                    document.getElementById("data").rows["gyroZ"].innerHTML = dataRow("gyroZ", data[index].gyroZ, " ");
+
+                } if (index < 500) {
+                    index++;
+                } else {
+                    index = 0;
+                }
+            }
+
+        </script>
+
+        <!--making a table to hold h1 title and jpg-->
+        <table>
+            <td><img src="Style/UATSpace-1.png"></td>
+            <td>
+                <h1>
+                    UAT Space Program
+                </h1>
+            </td>
+        </table>
+
+        <!--separate table "table1" controlled by style.css for data-->
+        <div class="table1">
+
+            <table border="1" width="100%" id="data">
+                <col style="width: 10%;">
+                <col style="width: 10%;">
+                <thead>
+                    <th>Data Type</th>
+                    <th>Reading</th>
+                </thead>
+                <tbody>
+                    <tr id="seconds"></tr>
+                    <tr id="latitude"></tr>
+                    <tr id="longitude"></tr>
+                    <tr id="gps_elevation"></tr>
+                    <tr id="bmpSensor_altitude"></tr>
+                    <tr id="bmpSensor_pressure"></tr>
+                    <tr id="bmpSensor_temp"></tr>
+                    <tr id="digSensor_temp"></tr>
+                    <tr id="cssSensor_temp"></tr>
+                    <tr id="cssSensor_eC02"></tr>
+                    <tr id="cssSensor_TVOC"></tr>
+                    <tr id="UV"></tr>
+                    <tr id="accelX"></tr>
+                    <tr id="accelY"></tr>
+                    <tr id="accelZ"></tr>
+                    <tr id="magneticX"></tr>
+                    <tr id="magneticY"></tr>
+                    <tr id="magneticZ"></tr>
+                    <tr id="gyroX"></tr>
+                    <tr id="gyroY"></tr>
+                    <tr id="gyroZ"></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--start and stop buttons linked to code.js with onclick functions-->
+        <div class="container1">
+            <!--separate container for countdown styling-->
+            <p id="countdownTimer">Countdown Status...</p>
+            <button class="button" id="startButton" onclick="start();">start</button>
+            <button class="button" id="stopButton" onclick="stop();">stop</button>
+        </div>
+        <br>
+        <button class="button" onclick="playStation()">Play Elton</button>
+        <button class="button" onclick="playBowie()">Play Bowie</button><br><br>
+
+        <script>
+       //no longer need alert
+       //alert("Test of the Alert function");
+        </script>
+
+        <!--put the craps game in a separate container, controlled by style.css-->
+        <div class="container">
+            <div class="crapsText">
+                <center>
+                    <h2>Play Craps!</h2>
+                    <div id="die1Results">die 1 status...</div><br>
+                    <div id="die2Results">die 2 status...</div><br>
+                    <div id="sumResults">Craps game status...</div><br>
+                    <div id="crapsResults">Craps game status...</div><br>
+                    <button class="button" onclick="playCraps();">start</button>
+                    <br>
+                </center>
+            </div>
+            <br>
+        </div>
+        <!--separate container for nav buttons-->
+        <div class="navButtons">
+            <!--navigation buttons to index and objectives-->
+            <button class="button" onclick="indexTrans();">home</button>
+            <button class="button" onclick="objTrans();">objectives</button>
+        </div>
+
+        <!--breaks to extend background all the way to bottom of page-->
+        <br><br><br><br><br>
+    </body>
+
+</html>
