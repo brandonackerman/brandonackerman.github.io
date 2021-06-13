@@ -1,0 +1,206 @@
+body {
+    background-image: url("background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+}
+
+/* Addition of CSS styling for the craps game */
+
+.container {
+    /* links to the container class in index.html */
+    position: initial;
+    /* defines the position of the container relative to the rest of the .html */
+    width: 300px;
+    /* sets the width of the container to 300 pixels */
+    font-size: 14px;
+    /* sets font size to 14 pixels */
+    color: azure;
+    /* defines the text color */
+    font-family: 'Courier New', Courier, monospace;
+    /* defines text font */
+    background: rgba(0, 0, 0, 0.301);
+    /* defines background color of the container */
+    padding-top: 1%;
+    /* defines the percentage of padding required on top */
+    padding-bottom: 1%;
+    /* defines the percentage of padding required on bottom */
+    padding-right: 10px;
+    /* defines the percentage of padding required on right */
+    padding-left: 10px;
+    /* defines the percentage of padding required on left */
+    border-radius: 8px;
+    /* sets border radius size to 8 pixels to round the edges */
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.336);
+    /* adds small drop shadow */
+}
+
+.navButtons {
+    /* links to the navButtons class in index.html */
+    position: relative;
+    /* defines the position of the container relative to the rest of the .html */
+    padding-left: 3.5%;
+    /* defines the percentage of padding required on left */
+}
+
+.crapsText {
+    /* links to the crapsText class in index.html */
+    position: relative;
+    /* defines the position of the crapsText element as a fixed location in relation to the rest of the .html */
+    width: 300px;
+    /* sets the width of the crapsText element to 300 pixels */
+    text-align: center;
+    /* aligns the crapsText element to center justification */
+}
+
+/* CSS Styling for Buttons */
+
+.button {
+    /* defines styling of the .button class in index.html */
+    size: 100px;
+    /* sets .button size to 100 pixels */
+    width: 100px;
+    /* sets .button width to 100 pixels */
+    height: 21px;
+    /* sets .button height to 21 pixels */
+    border: 2px;
+    /* sets border to 2 pixels */
+    border-color: rgba(0, 0, 0, 0.562);
+    /* sets border color to transparent black */
+    border-style: solid;
+    /* sets border style to solid */
+    border-radius: 10px;
+    /* sets border radius size to 10 pixels to round the edges */
+    background-color: rgb(61, 61, 61);
+    /* sets background color to grey */
+    color: rgb(0, 183, 255);
+    /* sets text color to light blue */
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.603);
+    /* adds small drop shadow */
+    font-family: 'Courier New', Courier, monospace;
+    /* defines text font */
+    font-weight: bolder;
+    /* makes text bolder */
+}
+
+.button:hover {
+    /* defines the action when button is hovered over */
+    background: rgba(28, 75, 107, 0.555);
+    /* sets .button element color when mouse is hovered over it */
+    cursor: pointer;
+    /* changes the cursor to a pointer when mouse is hovered over it */
+    color: rgb(255, 255, 255);
+    /* sets text color to white */
+    font-weight: bolder;
+    /* makes text bolder */
+    text-shadow: .5px -.5px rgba(255, 255, 255, 0.151);
+    /* adds drop shadow to text */
+}
+
+/* visual indicator of a button being disabled */
+
+.button:disabled {
+    background: red;
+    /* sets the background color to red */
+}
+
+h2 {
+    font-weight: bolder;
+    /* makes text bolder */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* defines text font */
+    color: rgb(255, 255, 255);
+    /* sets text color to light blue */
+    background: rgba(28, 75, 107, 0.384);
+    /* sets background color to dark blue */
+    width: fit-content;
+    border-radius: 10px;
+    /* sets border radius size to 10 pixels to round the edges */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.507);
+    /* adds small drop shadow */
+    text-shadow: 2px 3px rgba(0, 0, 0, 0.404);
+    /* creates a small shadow on the text */
+    padding-left: 25px;
+    /* defines the amount of padding required on left */
+    padding-right: 25px;
+    /* defines the amount of padding required on right */
+    padding-bottom: 3px;
+    /* defines the amount of padding required on bottom */
+}
+
+/* CSS Styling for dataTable */
+
+.table1 {
+    width: 550px;
+    /* sets container width */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* defines text font */
+    color: white;
+    /* defines the color of the text in the table */
+    font-weight: bold;
+    /*makes the table text bold*/
+    text-shadow: 2px 3px rgba(0, 0, 0, 0.404);
+    /* creates a drop shadow behind the text */
+    background-color: rgba(61, 61, 61, 0.63);
+    /* sets background color to grey */
+    border-radius: 8px;
+    /* sets border radius size to 8 pixels to round the edges */
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.336);
+    /* adds small drop shadow */
+}
+
+h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* defines text font */
+    color: white;
+    /* defines the color of the text in the table */
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.548);
+    /* adds small drop shadow */
+}
+
+.container1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* defines text font */
+    color: white;
+    /* defines the color of the text in the container*/
+    font-weight: bolder;
+    /* makes the table text bold */
+    font-size: larger;
+    /* makes the text in the container larger */
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.548);
+    /* creates a drop shadow behind the text */
+}
+
+p2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* defines text font */
+    color: white;
+    /* defines the color of the text in the paragraph */
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.582);
+    /* adds small drop shadow */
+}
+
+.container2 {
+    /* links to the container class in index.html */
+    position: initial;
+    /* defines the position of the container relative to the rest of the .html */
+    width: 1300px;
+    /* sets the width of the container to 900 pixels */
+    font-size: 16px;
+    /* sets font size to 14 pixels */
+    color: rgb(255, 255, 255);
+    /* defines the text color */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* defines text font */
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.774);
+    /* creates a drop shadow behind the text */
+    background: rgba(0, 0, 0, 0.377);
+    /* sets background color to transparent black */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.336);
+    /* adds small drop shadow */
+    padding: 4px;
+    /* defines the amount of padding required on all sides of the container */
+    border-radius: 8px;
+    /* sets border radius size to 8 pixels to round the edges */
+}
